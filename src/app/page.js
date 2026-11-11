@@ -1,8 +1,19 @@
+import Banner from "@/Components/Banner";
+import FeaturedDress from "@/Components/FeaturedDress";
+import FeaturedMakup from "@/Components/FeaturedMakup";
+import FeaturedShoes from "@/Components/FeaturedShoes";
+import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <Navbar></Navbar>
+    <div>
+      <Navbar></Navbar>
+    <Banner></Banner>
+    <FeaturedDress></FeaturedDress>
+    <FeaturedShoes></FeaturedShoes>
+    <FeaturedMakup></FeaturedMakup>
+    <Footer></Footer>
+    </div>
   );
 }
