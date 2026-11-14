@@ -1,7 +1,8 @@
 import { AddModalMakup } from '@/Components/AddModalMakup';
 import { getMakupProduct } from '@/lib/data';
-import { Card } from '@heroui/react';
+import { Button, Card } from '@heroui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const makupPage =async () => {
@@ -31,6 +32,15 @@ const makupPage =async () => {
                         <div className='flex flex-col px-10'>
                             <h2 className='text-xl font-bold'>Product Name:<span>{makup.name}</span></h2>
                             <p className='font-bold'>Price:<span className=''>{makup.price}</span></p>
+                        </div>
+
+                        <div className='flex gap-4 items-center'>
+                            <Link href={`/products/makup/${makup._id}`}>
+                            <Button className={'bg-[#7B2024] rounded-2xl text-shadow-red-400'}>Buy Now</Button>
+                            </Link>
+                            <Link href={`/products/makup/${makup._id}`}>
+                            <Button className={'bg-[#7B2024] rounded-2xl text-shadow-red-400'}>Details</Button>
+                            </Link>
                         </div>
                     </Card>)
                 }

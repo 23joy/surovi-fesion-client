@@ -25,8 +25,8 @@ const MakupDetails = ({ makupDetails }) => {
                     <h2 className='text-xl font-bold'>Product Name: <span>{makup.name}</span></h2>
                     <p className='font-bold'>Price: <span>{makup.price}</span></p>
 
-                    <Link href={`/products/makup/${makup._id}`}>
-                        <Button className={'bg-[#7B2024] rounded-2xl text-shadow-red-400'}>Details</Button>
+                    <Link href={'/'}>
+                        <Button className={'bg-[#7B2024] rounded-2xl text-shadow-red-400'}>buy now</Button>
                     </Link>
                 </div>
             </Card>

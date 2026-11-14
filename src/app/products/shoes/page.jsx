@@ -31,7 +31,10 @@ const ShoesProductPage = async () => {
                             <p>Price: ${shoes.price}</p>
                             <p>{shoes.description}</p>
                         </div>
-                        <div>
+                        <div className='flex gap-4'>
+                            <Link href={`/products/shoes/${shoes._id}`}>
+                            <Button className={'bg-[#7B2024] rounded-2xl text-shadow-red-400'}> Buy Now</Button>
+                            </Link>
                             <Link href={`/products/shoes/${shoes._id}`}>
                             <Button className={'bg-[#7B2024] rounded-2xl text-shadow-red-400'}> Details</Button>
                             </Link>

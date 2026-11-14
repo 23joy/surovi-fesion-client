@@ -19,7 +19,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-between items-center gap-8 p-10'>
+            <div className='grid justify-between items-center gap-8 p-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
                 <ul>
                     <li>Lorem ipsum dolor sit amet.</li>
                     <li>Lorem ipsum dolor sit amet.</li>
