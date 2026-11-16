@@ -22,7 +22,7 @@ export function AAddmodalDress() {
         dressProduct.reviews = Number(dressProduct.reviews);
         console.log(dressProduct)
 
-        const res=await fetch("http://localhost:5001/dress",{
+        const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/dress`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json',

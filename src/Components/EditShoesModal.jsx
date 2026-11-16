@@ -17,7 +17,7 @@ const EditShoesModal = ({shoes}) => {
         ShoesProduct.stock=Number(ShoesProduct.stock);
         console.log(ShoesProduct)
 
-        const res=await fetch(`http://localhost:5001/shoes/${_id}`,{
+        const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/shoes/${_id}`,{
             method:"PATCH",
             headers:{
                 'Content-Type':'application/json'

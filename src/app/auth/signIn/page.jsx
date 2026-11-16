@@ -1,7 +1,7 @@
 "use client"
 import { authClient } from '@/lib/auth-client';
 import { Eye, EyeSlash } from '@gravity-ui/icons';
-import { Button, Card, Checkbox, Description, FieldError, Form, Input, InputGroup, Label, TextField } from '@heroui/react';
+import { Button, Card, Checkbox, Description, FieldError, Form, Input, InputGroup, Label, Separator, TextField } from '@heroui/react';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 import { redirect, useRouter } from 'next/navigation';
@@ -46,7 +46,7 @@ const SignInPage = () => {
         bg-white/80 backdrop-blur-xl shadow-2xl p-8 space-y-5 '>
             <h2 className='p-5 text-center text-2xl font-bold'>SignIN</h2>
             <Form
-                className="flex w-96 flex-col gap-4 space-y-5 p-10"
+                className="flex w-96 flex-col gap-4 space-y-5 p-5"
                 onSubmit={onSubmit}
             >
                 <TextField
@@ -96,11 +96,17 @@ const SignInPage = () => {
                         </Button>
                     </div>
                 </div>
-                <p className="text-center font-extrabold m-3">or continue with</p>
-                <Button onClick={handleGoogleSignIn} className="w-full mt-3" variant="tertiary">
-                    <Icon icon="devicon:google" />
-                    Sign in with Google
-                </Button>
+                <div className='flex  justify-center items-center gap-3'>
+                    <Separator/>
+                        <div className="whitespace-nowrap">or continue with</div>
+                    <Separator/>
+                </div>
+                <div>
+                    <Button variant='outline' onClick={handleGoogleSignIn} className="w-full rounded-none">
+                        <Icon icon="devicon:google" />
+                        Sign in with Google
+                    </Button>
+                </div>
             </Form>
 
         </Card>

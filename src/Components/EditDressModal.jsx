@@ -22,7 +22,7 @@ const EditDressModal = ({productDetails}) => {
         dressProduct.reviews = Number(dressProduct.reviews);
         console.log(dressProduct)
 
-        const res = await fetch(`http://localhost:5001/dress/${_id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/dress/${_id}`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const EditDressModal = ({productDetails}) => {
     }
     return (
         <Modal>
-            <Button variant="secondary">+ Add Dress</Button>
+            <Button variant="secondary">+ edit Dress</Button>
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
                     <Modal.Dialog className="sm:max-w-md">

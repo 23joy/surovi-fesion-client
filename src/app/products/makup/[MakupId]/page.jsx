@@ -3,6 +3,7 @@ import EditMakupModal from '@/Components/EditMakupModal';
 import MakupDetails from '@/Components/MakupDetails';
 import { makupDetails } from '@/lib/data';
 import React from 'react';
+export const instant = false;
 
 const MakupDetailsPage =async ({params}) => {
     const{MakupId}=await params;

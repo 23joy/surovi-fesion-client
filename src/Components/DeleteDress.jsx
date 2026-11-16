@@ -8,7 +8,7 @@ export function DeleteDress({productDetails}) {
    
     const handleDelete=async(e)=>{
         e.preventDefault();
-        const res=await fetch(`http://localhost:5001/dress/${_id}`,{
+        const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/dress/${_id}`,{
             method:"DELETE",
             headers:{
                 'content-type':'application/json'

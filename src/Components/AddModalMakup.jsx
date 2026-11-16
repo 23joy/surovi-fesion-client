@@ -30,7 +30,7 @@ export function AddModalMakup() {
         makeupProduct.price = Number(makeupProduct.price);
         makeupProduct.stock = Number(makeupProduct.stock);
 
-        const res = await fetch("http://localhost:5001/makup", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/makup`, {
             method: "POST",
             headers: {
                 'content-Type': 'application/json'

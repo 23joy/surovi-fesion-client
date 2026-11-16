@@ -2,7 +2,8 @@ import { DeleteShoes } from '@/Components/DeleteShoes';
 import EditShoesModal from '@/Components/EditShoesModal';
 import ShoesDetails from '@/Components/ShoesDetails';
 import { shoesDetails } from '@/lib/data';
-import React from 'react';
+import React, { Suspense } from 'react';
+export const instant = false;
 
 const ShoesDetailsPage = async({params}) => {
     const{ShoesId}=await params;
@@ -19,7 +20,9 @@ const ShoesDetailsPage = async({params}) => {
 
             </div>
             <div>
-                <ShoesDetails shoes={shoes}></ShoesDetails>
+                <Suspense fallback={<p>loading.......</p>}>
+                    <ShoesDetails shoes={shoes}></ShoesDetails>
+                </Suspense>
             </div>
         </div>
     );

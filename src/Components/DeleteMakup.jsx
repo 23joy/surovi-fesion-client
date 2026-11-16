@@ -8,7 +8,7 @@ export function DeleteMakup({makupDetail}) {
 
     const handleDelete=async(e)=>{
         e.preventDefault()
-        const res=await fetch(`http://localhost:5001/makup/${_id}`,{
+        const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/makup/${_id}`,{
             method:"DELETE",
             headers:{
                 'content-type':'application/json'

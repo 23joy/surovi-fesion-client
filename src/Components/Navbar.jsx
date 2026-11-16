@@ -9,7 +9,7 @@ import { FaCartShopping } from 'react-icons/fa6';
 import { signOut, useSession } from '@/lib/auth-client';
 
 const Navbar = () => {
-    const { data, isPending } = useSession()
+    const { data } = useSession()
     const user = data?.user;
     console.log(user)
     return (
@@ -20,11 +20,7 @@ const Navbar = () => {
                 ></Image>
             </div>
             <div>
-                <SearchField name="search">
-                    <SearchField.Group>
-                        <SearchField.Input className="w-[280px] bg-white rounded-2xl p-2" placeholder="Search here" />
-                    </SearchField.Group>
-                </SearchField>
+               <Link href={'/mybooking'}>Mybookings</Link>
             </div>
             <div className='flex justify-between gap-2 items-center'>
                 {user ? <>

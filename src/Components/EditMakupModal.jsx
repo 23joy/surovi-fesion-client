@@ -35,7 +35,7 @@ const EditMakupModal = ({makupDetail}) => {
 
          console.log(makeupProduct)
 
-        const res = await fetch(`http://localhost:5001/makup/${_id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/makup/${_id}`, {
             method: "PATCH",
             headers: {
                 'content-Type': 'application/json'

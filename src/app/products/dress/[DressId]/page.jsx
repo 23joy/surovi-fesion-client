@@ -2,7 +2,8 @@ import { DeleteDress } from '@/Components/DeleteDress';
 import DressDetails from '@/Components/DressDetails';
 import EditDressModal from '@/Components/EditDressModal';
 import { dressDetails } from '@/lib/data';
-import React from 'react';
+import React, { Suspense } from 'react';
+export const instant = false;
 
 const DressDetailsPage = async({params}) => {
     const {DressId}=await params;
@@ -18,7 +19,9 @@ const DressDetailsPage = async({params}) => {
                 </div>
             </div>
             <div>
-                <DressDetails productDetails={productDetails}></DressDetails>
+                <Suspense>
+                    <DressDetails productDetails={productDetails}></DressDetails>
+                </Suspense>
             </div>
         </div>
     );

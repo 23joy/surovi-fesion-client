@@ -1,7 +1,8 @@
 "use client"
 import { authClient } from '@/lib/auth-client';
 import { Eye, EyeSlash } from '@gravity-ui/icons';
-import { Button, Card, Description, FieldError, FieldGroup, Fieldset, Form, Input, InputGroup, Label, TextField } from '@heroui/react';
+import { Button, Card, Description, FieldError, FieldGroup, Fieldset, Form, Input, InputGroup, Label, Separator, TextField } from '@heroui/react';
+import { Icon } from '@iconify/react';
 import { redirect, useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
@@ -24,10 +25,16 @@ const SingUpPage = () => {
             redirect("/")
         }
     }
+    const handleGoogleSignUp =async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+        console.log(data)
+    }
     return (
-        <Card className='max-w-2xl mx-auto mt-10 w-full max-w-md rounded-3xl border border-white/30
+        <Card className='max-w-2xl mx-auto mt-10 mb-10 w-full max-w-md rounded-3xl border border-white/30
                bg-white/80 backdrop-blur-xl shadow-2xl p-8 space-y-5 '>
-            <h2 className='p-5 text-center text-2xl font-bold'>SignIN</h2>
+            <h2 className='p-5 text-center text-2xl font-bold'>SignUp page</h2>
             <Form className="w-full max-w-96" onSubmit={onSubmit}>
                 <Fieldset>
                     <FieldGroup>
@@ -84,6 +91,17 @@ const SingUpPage = () => {
                         </Button>
                     </Fieldset.Actions>
                 </Fieldset>
+                <div className='flex  justify-center items-center gap-3 pt-5 space-y-3'>
+                    <Separator />
+                    <div className="whitespace-nowrap">or continue with</div>
+                    <Separator />
+                </div>
+                <div>
+                    <Button variant='outline' onClick={handleGoogleSignUp} className="w-full rounded-none">
+                        <Icon icon="devicon:google" />
+                        Sign in with Google
+                    </Button>
+                </div>
             </Form>
         </Card>
     );

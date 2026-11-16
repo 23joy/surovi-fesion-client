@@ -17,7 +17,7 @@ export function AddModalShoes() {
         ShoesProduct.stock=Number(ShoesProduct.stock);
         console.log(ShoesProduct)
 
-        const res=await fetch("http://localhost:5001/shoes",{
+        const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/shoes`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json'

@@ -2,7 +2,7 @@
 import { AAddmodalDress } from '@/Components/AddmodalDress';
 import DressProduct from '@/Components/DressProduct';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 
 const dressPage = () => {
    
@@ -14,7 +14,9 @@ const dressPage = () => {
                
             </div>
             <div className='flex justify-between items-center'>
-                <DressProduct></DressProduct>
+                <Suspense fallback={<p>Loading dress.....</p>}>
+                    <DressProduct></DressProduct>
+                </Suspense>
             </div>
         </div>
     );
